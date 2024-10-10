@@ -1,0 +1,10 @@
+# service_run: http://localhost:8978
+
+services:
+  cloudbeaver:
+      image: dbeaver/cloudbeaver:latest
+      container_name: cloudbeaver
+      network_mode: host  
+      restart: always
+      volumes: 
+       - ${PWD}/volumes/cloudbeaver:/opt/cloudbeaver/workspace

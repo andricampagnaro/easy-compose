@@ -1,0 +1,9 @@
+services:
+ amphi-etl:
+    build:
+      context: ./dockerfiles
+      dockerfile: amphi-etl
+    container_name: amphi-etl
+    network_mode: host
+    volumes:
+       - ${PWD}/volumes/amphi-etl:/app

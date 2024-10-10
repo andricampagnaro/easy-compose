@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:alpine
+    container_name: postgres
+    volumes:
+      - ${PWD}/volumes/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    # networks:
+    #   smart_si_network:
+    #     ipv4_address: 4.2.0.10
+    environment:
+      - POSTGRES_PASSWORD=postgres
