@@ -1,0 +1,13 @@
+# service_run: http://localhost:3000
+# Deploy: https://docs.briefer.cloud/deployment/vm
+
+services:
+  db:
+    image: briefercloud/briefer
+    container_name: briefer
+    network_mode: host  
+    volumes:
+      - ${PWD}/volumes/briefer/briefer_jupyter_data:/home/jupyteruser
+      - ${PWD}/volumes/briefer/briefer_briefer_data:/home/briefer
+    ports:
+      - "3000:3000"
